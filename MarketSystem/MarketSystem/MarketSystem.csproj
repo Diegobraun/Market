@@ -46,6 +46,7 @@
     <Compile Include="ClientFeatures\Address.cs" />
     <Compile Include="ClientFeatures\Client.cs" />
     <Compile Include="ClientFeatures\Contact.cs" />
+    <Compile Include="ClientFeatures\Validation\ValidationClient.cs" />
     <Compile Include="ProductFeatures\Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
