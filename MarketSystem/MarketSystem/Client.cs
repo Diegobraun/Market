@@ -19,5 +19,50 @@ namespace MarketSystem
         public Contact Contact { get; private set; }
         public Address Address { get; private set; }
 
+        
+        public void SetId (int id)
+        {
+            ClientId = id;
+        }
+
+        public void SetFirstName (string firstName)
+        {
+            FirstName = firstName;
+        }
+
+        public void SetLastName (string lastName)
+        {
+            LastName = lastName;
+        }
+
+        public void SetGender (char gender)
+        {
+            Gender = gender;
+        }
+
+        public void SetDateOfBirth (DateTime dateOfBirth)
+        {
+            DateOfBirth = dateOfBirth;
+        }
+
+        public void SetCpf (string cpf)
+        {
+            Cpf = cpf;
+        }
+
+        public void SetPassword (string password)
+        {
+            Password = password;
+        }
+
+        public void SetContact (Contact contact)
+        {
+            Contact = contact;
+        }
+
+        public void SetAddress (Address address)
+        {
+            Address = address;
+        }
     }
 }
