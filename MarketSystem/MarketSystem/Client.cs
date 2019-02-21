@@ -12,6 +12,7 @@ namespace MarketSystem
         public int ClientId { get; private set; }
         public string FirstName { get; private set; }
         public string LastName { get; private set; }
+        public string Email { get; private set; }
         public char Gender { get; private set; }
         public DateTime DateOfBirth { get; private set; }
         public string Cpf { get; private set; }
@@ -33,6 +34,11 @@ namespace MarketSystem
         public void SetLastName (string lastName)
         {
             LastName = lastName;
+        }
+
+        public void SetEmail (string email)
+        {
+            Email = email;
         }
 
         public void SetGender (char gender)
