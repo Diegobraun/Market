@@ -4,8 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Serialization;
+using MarketSystem_Client_Contact;
+using MarketSystem_Client_Address;
 
-namespace MarketSystem.Client
+namespace MarketSystem_Client_Client
 {
     public class Client
     {
@@ -19,6 +21,7 @@ namespace MarketSystem.Client
         public string Password { get; private set; }
         public Contact Contact { get; private set; }
         public Address Address { get; private set; }
+        public int Access { get; private set; } 
         
         public void SetId (int id)
         {
@@ -68,6 +71,11 @@ namespace MarketSystem.Client
         public void SetAddress (Address address)
         {
             Address = address;
+        }
+
+        public void SetAccess (int access)
+        {
+            Access = access;
         }
     }
 }

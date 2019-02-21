@@ -1,4 +1,4 @@
-﻿namespace MarketSystem.Client
+﻿namespace MarketSystem_Client_Contact
 {
     public class Contact
     {
