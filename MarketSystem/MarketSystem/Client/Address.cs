@@ -1,4 +1,4 @@
-﻿namespace MarketSystem
+﻿namespace MarketSystem.Client
 {
     public class Address
     {
@@ -8,6 +8,25 @@
         public string Number { get; set; }
         public string Complement { get; set; }
         public string District { get; set; }
+
+        public Address (char type, string city, string street, string number, string district)
+        {
+            Type = type;
+            City = city;
+            Street = street;
+            Number = number;
+            District = district;
+        }
+
+        public Address(char type, string city, string street, string number, string complement, string district)
+        {
+            Type = type;
+            City = city;
+            Street = street;
+            Number = number;
+            Complement = complement;
+            District = district;
+        }
 
         public void SetType (char type)
         {

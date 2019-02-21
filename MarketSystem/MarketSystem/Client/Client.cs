@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Serialization;
 
-namespace MarketSystem
+namespace MarketSystem.Client
 {
-    class Client
+    public class Client
     {
         public int ClientId { get; private set; }
         public string FirstName { get; private set; }
@@ -19,7 +19,6 @@ namespace MarketSystem
         public string Password { get; private set; }
         public Contact Contact { get; private set; }
         public Address Address { get; private set; }
-
         
         public void SetId (int id)
         {
