@@ -20,7 +20,9 @@ namespace MarketSystem.ClientFeatures.Validation
         public bool CheckIfIsValidClient (Client client)
         {
             bool check = true;
+
             List<object> values = new List<object>();
+
             values.Add(client.FirstName);
             values.Add(client.LastName);
             values.Add(client.Email);
@@ -35,6 +37,7 @@ namespace MarketSystem.ClientFeatures.Validation
             values.Add(client.Address.Number);
             values.Add(client.Address.District);
             values.Add(client.Address.City);
+
             foreach(object value in values)
             {
                 if (CheckIfIsNotEmpty(value.ToString()))
