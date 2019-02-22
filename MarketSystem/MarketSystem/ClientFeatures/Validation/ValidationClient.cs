@@ -19,7 +19,7 @@ namespace MarketSystem.ClientFeatures.Validation
 
         public bool CheckIfIsValidClient (Client client)
         {
-            
+            return true;
         }
     }
 }
