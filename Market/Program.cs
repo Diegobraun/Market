@@ -1,5 +1,6 @@
 ﻿using System;
 using MarketSystem_Client_Client;
+using Market_GerarCount;
 
 namespace Mercado
 {
@@ -11,6 +12,8 @@ namespace Mercado
             Client client = new Client();
             client.SetEmail("Diegobraun2000@gmail.com");
             Console.WriteLine(client.Email);
+            GenerateAccount ga = new GenerateAccount();
+            ga.Opa();
         }
     }
 }
