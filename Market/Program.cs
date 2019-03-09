@@ -1,6 +1,11 @@
 ﻿using System;
 using MarketSystem_Client_Client;
 using Market_GerarCount;
+using MarketSystem_Purchase_Purchase;
+using MarketSystem_Purchase_PaymentMethod;
+using MarketSystem_Product;
+using MarketSystem_Client_Contact;
+using MarketSystem_Client_Address;
 
 namespace Mercado
 {
@@ -8,12 +13,27 @@ namespace Mercado
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            Client client = new Client();
-            client.SetEmail("Diegobraun2000@gmail.com");
-            Console.WriteLine(client.Email);
-            GenerateAccount ga = new GenerateAccount();
-            ga.Opa();
+        // List<Product> ProductList = new List<Product>();
+        // public Client Client { get; private set; }
+        // public double FinalValue { get; private set; }
+        // public PaymentMethod PaymentMethod { get; private set; }
+        Product product = new Product(1,"pizza","pizza boa",123);
+        Product product2 = new Product(2,"hamburguer","hamburguer bom",254);
+        Contact contact = new Contact('C',"997432522");
+        Address address = new Address('C',"Dois irmãos","29 de setembro","269","RS");
+        DateTime dateTime = new DateTime(2000,5,17);
+
+        Client client = new Client(1,"Diego","Braun","diegobraun2000@gmail.com",'M',dateTime,
+        "03040959077","senhateste",contact,address,1);
+        PaymentMethod paymentMethod = new PaymentMethod(1,2);
+        Purchase purchase = new Purchase(client,paymentMethod);
+        purchase.ProductList.Add(product);
+        purchase.ProductList.Add(product2);
+        purchase.SetFinalValue(purchase.CalculateFinalValue());
+
+        Console.WriteLine(purchase.FinalValue);
+
+        Console.ReadLine();
         }
     }
 }

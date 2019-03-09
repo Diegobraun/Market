@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MarketSystem_Client_Address;
+using System.Reflection;
 
 namespace Mercado.ClientFeatures.AddressValidation
 {
     public class ValidationAddress
-    {
+    {   
         public bool CheckIfIsNotEmpty (string content)
         {
             if (string.IsNullOrWhiteSpace(content))
@@ -40,7 +41,8 @@ namespace Mercado.ClientFeatures.AddressValidation
             bool check = true;
 
             List<object> values = new List<object>();
-
+        
+        
             values.Add(address.Type);
             values.Add(address.City);
             values.Add(address.Street);

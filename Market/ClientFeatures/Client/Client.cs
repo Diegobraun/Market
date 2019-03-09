@@ -23,6 +23,21 @@ namespace MarketSystem_Client_Client
         public Address Address { get; private set; }
         public int Access { get; private set; } 
         
+        public Client(int id, string firstName, string lastName, string email, char gender,
+        DateTime dateOfBirth,string cpf, string password, Contact contact, Address address,
+        int access){
+            ClientId = id;
+            FirstName = firstName;
+            LastName = lastName;
+            Email = email;
+            Gender = gender;
+            DateOfBirth = dateOfBirth;
+            Cpf = cpf;
+            Password = password;
+            Contact = contact;
+            Address = address;
+            Access = access;
+        }
         public void SetId (int id)
         {
             ClientId = id;

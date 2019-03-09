@@ -11,10 +11,15 @@ namespace MarketSystem_Purchase_Purchase
 {
     class Purchase
     {
-        List<Product> ProductList = new List<Product>();
+        public List<Product> ProductList = new List<Product>();
         public Client Client { get; private set; }
         public double FinalValue { get; private set; }
         public PaymentMethod PaymentMethod { get; private set; }
+
+        public Purchase (Client client, PaymentMethod paymentMethod){
+            Client = client;
+            PaymentMethod = paymentMethod;
+        }
 
         public void SetClient (Client client)
         {
@@ -31,5 +36,13 @@ namespace MarketSystem_Purchase_Purchase
             PaymentMethod = paymentMethod;
         }
 
+        public double CalculateFinalValue (){
+            double value = 0;
+            foreach (Product product in ProductList){
+                value = value + product.Price;
+            }
+
+            return value;
+        }
     }
 }

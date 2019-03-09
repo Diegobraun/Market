@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 
 namespace MarketSystem_Product
 {
-    class Product
+    public class Product
     {
         public int ProductId { get; private set; }
         public string Name { get; private set; }
         public string Description { get; private set; }
         public double Price { get; private set; }
 
-        public Product (string name, string description, double price)
+        public Product (int id, string name, string description, double price)
         {
+            ProductId = id;
             Name = name;
             Description = description;
             Price = price;
