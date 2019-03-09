@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 using MarketSystem_Product;
 using MarketSystem_Client_Client;
 using MarketSystem_Purchase_PaymentMethod;
+using Market.PurchaseFeatures;
 
 namespace MarketSystem_Purchase_Purchase
 {
-    class Purchase
+    public class Purchase
     {
         public List<Product> ProductList = new List<Product>();
         public Client Client { get; private set; }
@@ -35,6 +36,10 @@ namespace MarketSystem_Purchase_Purchase
         {
             PaymentMethod = paymentMethod;
         }
+
+        // public void SetParcel (Parcel parcel){
+        //     Parcel = parcel;
+        // }
 
         public double CalculateFinalValue (){
             double value = 0;

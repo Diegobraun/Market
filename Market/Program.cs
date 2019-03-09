@@ -13,27 +13,26 @@ namespace Mercado
     {
         static void Main(string[] args)
         {
-        // List<Product> ProductList = new List<Product>();
-        // public Client Client { get; private set; }
-        // public double FinalValue { get; private set; }
-        // public PaymentMethod PaymentMethod { get; private set; }
-        Product product = new Product(1,"pizza","pizza boa",123);
-        Product product2 = new Product(2,"hamburguer","hamburguer bom",254);
-        Contact contact = new Contact('C',"997432522");
-        Address address = new Address('C',"Dois irmãos","29 de setembro","269","RS");
-        DateTime dateTime = new DateTime(2000,5,17);
+            Product product = new Product(1,"pizza","pizza boa",123);
+            Product product2 = new Product(2,"hamburguer","hamburguer bom",254);
+            Contact contact = new Contact('C',"997432522");
+            Address address = new Address('C',"Dois irmãos","29 de setembro","269","RS");
+            DateTime dateTime = new DateTime(2000,5,17);
 
-        Client client = new Client(1,"Diego","Braun","diegobraun2000@gmail.com",'M',dateTime,
-        "03040959077","senhateste",contact,address,1);
-        PaymentMethod paymentMethod = new PaymentMethod(1,2);
-        Purchase purchase = new Purchase(client,paymentMethod);
-        purchase.ProductList.Add(product);
-        purchase.ProductList.Add(product2);
-        purchase.SetFinalValue(purchase.CalculateFinalValue());
+            Client client = new Client(1,"Diego","Braun","diegobraun2000@gmail.com",'M',dateTime,
+            "03040959077","senhateste",contact,address,1);
 
-        Console.WriteLine(purchase.FinalValue);
+            PaymentMethod paymentMethod = new PaymentMethod(1,2);
 
-        Console.ReadLine();
+            Purchase purchase = new Purchase(client,paymentMethod);
+
+            purchase.ProductList.Add(product);
+            purchase.ProductList.Add(product2);
+            purchase.SetFinalValue(purchase.CalculateFinalValue());
+            
+            Console.WriteLine(purchase.FinalValue);
+
+            Console.ReadLine();
         }
     }
 }
