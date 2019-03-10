@@ -21,12 +21,5 @@ namespace Market.PurchaseFeatures
         public void SetParcelAmount (int parcelAmount){
             ParcelAmount = parcelAmount;
         }
-
-        public void GenerateParcels ()
-        {
-            for (int i = 0; i < ParcelAmount;i++){
-                ParcelList.Add((Purchase.FinalValue) / ParcelAmount);
-            }
-        }
     }
 }

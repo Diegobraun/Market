@@ -6,6 +6,7 @@ using MarketSystem_Purchase_PaymentMethod;
 using MarketSystem_Product;
 using MarketSystem_Client_Contact;
 using MarketSystem_Client_Address;
+using Market.PurchaseFeatures;
 
 namespace Mercado
 {
@@ -30,8 +31,16 @@ namespace Mercado
             purchase.ProductList.Add(product2);
             purchase.SetFinalValue(purchase.CalculateFinalValue());
             
+            Parcel parcel = new Parcel(purchase,5);
+            GenerateParcel generateParcel = new GenerateParcel(parcel);
+
+            generateParcel.GenerateParcels();
+
             Console.WriteLine(purchase.FinalValue);
 
+            foreach (double value in parcel.ParcelList){
+                Console.WriteLine("Parcela de : "+value);
+            }
             Console.ReadLine();
         }
     }
