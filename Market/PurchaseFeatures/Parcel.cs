@@ -22,15 +22,5 @@ namespace Market.PurchaseFeatures
             ParcelAmount = parcelAmount;
         }
 
-        public string GenerateTextListParcels (){
-            string parcelsText = "\nParcelamento: \n\n";
-
-            for (int i = 0; i < Purchase.Parcel.ParcelAmount;i++){
-                parcelsText += $"Parcela {i+1} de {Purchase.Parcel.ParcelAmount}";
-                parcelsText += $"\nValor de {Purchase.FinalValue/Purchase.Parcel.ParcelAmount}\n";
-            }
-            return parcelsText;
-        }
-
     }
 }

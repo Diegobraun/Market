@@ -6,15 +6,17 @@ using System.Threading.Tasks;
 using System.IO;
 using MarketSystem_Purchase_Purchase;
 using MarketSystem_Product;
+using Market.PurchaseFeatures;
 
 namespace Market_GerarCount
 {
     public class GenerateAccount
     {
         public Purchase Purchase { get; private set; }
-
-        public GenerateAccount (Purchase purchase){
+        public GenerateParcel GenerateParcel { get; private set; }
+        public GenerateAccount (Purchase purchase, GenerateParcel generateParcel){
             Purchase = purchase;
+            GenerateParcel = generateParcel;
         }
         
         public void SetPurchase (Purchase purchase){
@@ -40,7 +42,7 @@ namespace Market_GerarCount
             receiptText += $"\nTelefone do cliente : {Purchase.Client.Contact.Description}";
             receiptText += $"\nCidade de entrega : {Purchase.Client.Address.City}";
             receiptText += $"\n\nProdutos : {GenerateTextListProduct()}";
-            receiptText += $"{Purchase.Parcel.GenerateTextListParcels()}";
+            receiptText += $"{GenerateParcel.GenerateTextListParcels()}";
 
             Console.WriteLine(receiptText);
         }

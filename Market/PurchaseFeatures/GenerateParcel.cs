@@ -15,5 +15,15 @@ namespace Market.PurchaseFeatures
                 Parcel.ParcelList.Add((Parcel.Purchase.FinalValue) / Parcel.ParcelAmount);
             }
         }
+
+        public string GenerateTextListParcels (){
+            string parcelsText = "\nParcelamento: \n\n";
+
+            for (int i = 0; i < Parcel.ParcelAmount;i++){
+                parcelsText += $"Parcela {i+1} de {Parcel.ParcelAmount}";
+                parcelsText += $"\nValor de {Parcel.Purchase.FinalValue/Parcel.ParcelAmount}\n";
+            }
+            return parcelsText;
+        }
     }
 }

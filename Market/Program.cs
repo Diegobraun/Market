@@ -35,7 +35,7 @@ namespace Mercado
             GenerateParcel generateParcel = new GenerateParcel(parcel);
             purchase.SetParcel(parcel);
             generateParcel.GenerateParcels();
-            GenerateAccount generateAccount = new GenerateAccount(purchase);
+            GenerateAccount generateAccount = new GenerateAccount(purchase,generateParcel);
 
             generateAccount.GenerateReceipt();
 
