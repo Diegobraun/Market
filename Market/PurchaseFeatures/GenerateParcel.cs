@@ -11,8 +11,18 @@ namespace Market.PurchaseFeatures
         }
         public void GenerateParcels ()
         {
+            double rest = 0;
+            double parcelValue = Parcel.Purchase.FinalValue / Parcel.ParcelAmount;
+            
+            if (Parcel.Purchase.FinalValue > parcelValue * Parcel.ParcelAmount)
+                rest = Parcel.Purchase.FinalValue - (parcelValue * Parcel.ParcelAmount);
+
             for (int i = 0; i < Parcel.ParcelAmount;i++){
-                Parcel.ParcelList.Add((Parcel.Purchase.FinalValue) / Parcel.ParcelAmount);
+                if ((i == Parcel.ParcelAmount) && (rest != 0))
+                    Parcel.ParcelList.Add((Parcel.Purchase.FinalValue / Parcel.ParcelAmount)
+                     + rest);
+                else
+                    Parcel.ParcelList.Add(Parcel.Purchase.FinalValue / Parcel.ParcelAmount);
             }
         }
 

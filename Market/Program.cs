@@ -14,8 +14,8 @@ namespace Mercado
     {
         static void Main(string[] args)
         {
-            Product product = new Product(1,"pizza","pizza boa",123);
-            Product product2 = new Product(2,"hamburguer","hamburguer bom",254);
+            Product product = new Product(1,"pizza","pizza boa",50);
+            Product product2 = new Product(2,"hamburguer","hamburguer bom",50);
             Contact contact = new Contact('C',"997432522");
             Address address = new Address('C',"Dois irmãos","29 de setembro","269","RS");
             DateTime dateTime = new DateTime(2000,5,17);
@@ -31,15 +31,13 @@ namespace Mercado
             purchase.ProductList.Add(product2);
             purchase.SetFinalValue(purchase.CalculateFinalValue());
             
-            Parcel parcel = new Parcel(purchase,5);
+            Parcel parcel = new Parcel(purchase,3);
             GenerateParcel generateParcel = new GenerateParcel(parcel);
             purchase.SetParcel(parcel);
             generateParcel.GenerateParcels();
             GenerateAccount generateAccount = new GenerateAccount(purchase,generateParcel);
 
             generateAccount.GenerateReceipt();
-
-
 
             Console.ReadLine();
         }

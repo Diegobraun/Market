@@ -49,8 +49,9 @@ namespace MarketSystem_Purchase_Purchase
 
         public double CalculateFinalValue (){
             double value = 0;
+            
             foreach (Product product in ProductList){
-                value = value + product.Price;
+                value += product.Price;
             }
 
             return value;
