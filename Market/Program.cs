@@ -25,7 +25,7 @@ namespace Mercado
 
             PaymentMethod paymentMethod = new PaymentMethod(1,2);
 
-            Purchase purchase = new Purchase(client,paymentMethod);
+            Purchase purchase = new Purchase(1,client,paymentMethod);
 
             purchase.ProductList.Add(product);
             purchase.ProductList.Add(product2);
@@ -33,14 +33,14 @@ namespace Mercado
             
             Parcel parcel = new Parcel(purchase,5);
             GenerateParcel generateParcel = new GenerateParcel(parcel);
-
+            purchase.SetParcel(parcel);
             generateParcel.GenerateParcels();
+            GenerateAccount generateAccount = new GenerateAccount(purchase);
 
-            Console.WriteLine(purchase.FinalValue);
+            generateAccount.GenerateReceipt();
 
-            foreach (double value in parcel.ParcelList){
-                Console.WriteLine("Parcela de : "+value);
-            }
+
+
             Console.ReadLine();
         }
     }
