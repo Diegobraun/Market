@@ -1,4 +1,5 @@
 using Market.PurchaseFeatures;
+using System.Linq;
 
 namespace Market.PurchaseFeatures
 {
@@ -6,23 +7,26 @@ namespace Market.PurchaseFeatures
     {
         public Parcel Parcel { get; private set; }
 
-        public GenerateParcel (Parcel parcel){
+        public GenerateParcel(Parcel parcel){
             Parcel = parcel;
         }
-        public void GenerateParcels ()
+        public void GenerateParcels()
         {
             double rest = 0;
-            double parcelValue = Parcel.Purchase.FinalValue / Parcel.ParcelAmount;
+            double parcelValue = double.Parse(string.Format("{0:0.00}",
+            (Parcel.Purchase.FinalValue / Parcel.ParcelAmount)));
             
             if (Parcel.Purchase.FinalValue > parcelValue * Parcel.ParcelAmount)
-                rest = Parcel.Purchase.FinalValue - (parcelValue * Parcel.ParcelAmount);
+                rest = double.Parse(string.Format("{0:0.00}",Parcel.Purchase.FinalValue 
+                - parcelValue * Parcel.ParcelAmount));
+
 
             for (int i = 0; i < Parcel.ParcelAmount;i++){
-                if ((i == Parcel.ParcelAmount) && (rest != 0))
-                    Parcel.ParcelList.Add((Parcel.Purchase.FinalValue / Parcel.ParcelAmount)
+                if ((i == Parcel.ParcelAmount -1) && (rest != 0))
+                    Parcel.ParcelList.Add((parcelValue)
                      + rest);
                 else
-                    Parcel.ParcelList.Add(Parcel.Purchase.FinalValue / Parcel.ParcelAmount);
+                    Parcel.ParcelList.Add(parcelValue);
             }
         }
 
@@ -31,7 +35,7 @@ namespace Market.PurchaseFeatures
 
             for (int i = 0; i < Parcel.ParcelAmount;i++){
                 parcelsText += $"Parcela {i+1} de {Parcel.ParcelAmount}";
-                parcelsText += $"\nValor de {Parcel.Purchase.FinalValue/Parcel.ParcelAmount}\n";
+                parcelsText += $"{$"\nValor de {Parcel.ParcelList[i]}\n":0.00}";
             }
             return parcelsText;
         }
