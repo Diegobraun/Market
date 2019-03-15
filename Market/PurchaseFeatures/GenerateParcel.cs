@@ -37,6 +37,7 @@ namespace Market.PurchaseFeatures
                 parcelsText += $"Parcela {i+1} de {Parcel.ParcelAmount}";
                 parcelsText += $"{$"\nValor de {Parcel.ParcelList[i]}\n":0.00}";
             }
+            parcelsText += $"\nValor total da compra:R${Parcel.Purchase.FinalValue}";
             return parcelsText;
         }
     }
